@@ -5,3 +5,6 @@ export { default as Product } from './Product';
 export { default as HeroBanner } from './HeroBanner';
 export { default as FooterBanner } from './FooterBanner';
 export { default as Cart } from './Cart';
+export { default as PaymentTab } from './PaymentTab';
+export { default as OrderSummary } from './OrderSummary';
+export { default as OpenPesaModal } from './OpenPesaModal';

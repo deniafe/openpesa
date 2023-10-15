@@ -9,6 +9,8 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [activeTab, setActiveTab] = useState('creditDebit');
 
   let foundProduct;
   let index;
@@ -76,6 +78,14 @@ export const StateContext = ({ children }) => {
     });
   }
 
+  const openModal = () => {
+    setShowModal(true);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+  }
+
   return (
     <Context.Provider
       value={{
@@ -92,7 +102,12 @@ export const StateContext = ({ children }) => {
         onRemove,
         setCartItems,
         setTotalPrice,
-        setTotalQuantities 
+        setTotalQuantities,
+        showModal,
+        openModal,
+        closeModal,
+        activeTab,
+        setActiveTab
       }}
     >
       {children}
