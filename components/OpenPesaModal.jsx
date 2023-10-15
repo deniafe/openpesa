@@ -107,7 +107,7 @@ const OpenPesaModal = ({ onClose }) => {
     confirmationResult.confirm(code).then((result) => {
       // User signed in successfully.
       const user = result.user;
-      toast.success('User verified successfully')
+      toast.success('Payment made successfully')
       onClose()
       setLoading(false)
       return router.push("/success")
