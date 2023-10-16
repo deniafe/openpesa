@@ -150,11 +150,14 @@ const OpenPesaModal = ({ onClose }) => {
             <div className="modal-content">
               <BankIcon />
               <h3>{ title}</h3>
-              <div style={{display: 'flex', justifyContent: 'center', width: '100%', marginTop: '40px', marginBottom: '20px'}}>
-                <div style={{width: '90%'}}>
-                  <Select options={banks} onSelect={handleSelect} />
+              {
+                !codeSent &&
+                <div style={{display: 'flex', justifyContent: 'center', width: '100%', marginTop: '40px', marginBottom: '20px'}}>
+                  <div style={{width: '90%'}}>
+                    <Select options={banks} onSelect={handleSelect} />
+                  </div>
                 </div>
-              </div>
+              }
 
               {(selectedOption && !codeSent) && 
                   <div style={{display: 'flex', justifyContent: 'center', width: '100%', marginTop: '20px', marginBottom: '20px', transition: 'all 0.3s ease 0s'}}>
