@@ -15,32 +15,35 @@ const OrderSummary = () => {
   }
 
   return (
-    <div className="order-summary">
-      <h2>Order Summary</h2>
+    <div style={{display: 'flex', justifyContent: 'center'}} >
+      <div className="order-summary">
+        <h2>Order Summary</h2>
 
-      {cartItems.length >= 1 && cartItems.map((item) => (
-            <div className="original-amount-summary" key={item._id}>
-              <p>{item.name} : {item.quantity}</p>
-              <p>${item.price}</p>
-            </div>
-          ))}
-     
-      <div className="line"></div>
+        {cartItems.length >= 1 && cartItems.map((item) => (
+              <div className="original-amount-summary" key={item._id}>
+                <p>{item.name} : {item.quantity}</p>
+                <p>${item.price}</p>
+              </div>
+            ))}
+      
+        <div className="line"></div>
 
-      <div className="total-amount-summary">
-        <p>Total Amount:</p>
-        <p>${totalPrice}</p>
+        <div className="total-amount-summary">
+          <p>Total Amount:</p>
+          <p>${totalPrice}</p>
+        </div>
+      
+        {/* <button >Confirm Order</button> */}
+        <button
+          type="button"
+          onClick={openPaymentModal}
+          className="btn"
+        >
+          Confirm Order
+        </button>
       </div>
-     
-      {/* <button >Confirm Order</button> */}
-      <button
-        type="button"
-        onClick={openPaymentModal}
-        className="btn"
-      >
-        Confirm Order
-      </button>
     </div>
+    
   );
 };
 
