@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import { useRouter } from 'next/router';
 
 const Context = createContext();
 
@@ -14,6 +15,8 @@ export const StateContext = ({ children }) => {
 
   let foundProduct;
   let index;
+
+  const router = useRouter()
 
   const onAdd = (product, quantity) => {
     const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -85,6 +88,10 @@ export const StateContext = ({ children }) => {
   const closeModal = () => {
     setShowModal(false);
   }
+
+  useEffect(() => {
+    router.push("/")
+   }, [])
 
   return (
     <Context.Provider

@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         <title>JS Mastery Store</title>
       </Head>
       <header>
-        <Navbar />
+        {/* <Navbar /> */}
       </header>
       <main className="main-container">
         {children}
